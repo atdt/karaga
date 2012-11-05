@@ -1,11 +1,16 @@
 Karaga
 ======
 
-Karaga is a [Sauce Labs](http://saucelabs.com/) Selenium test runner for [MediaWiki](http://www.mediawiki.org/) sites. Karaga subclasses the `TestCase` class from Python's [unittest](http://docs.python.org/library/unittest.html), adding  assert methods based on common web testing patterns, such as checking for the presence of some element on the page, or checking that a cookie has been set.
+Karaga is a [Sauce Labs](http://saucelabs.com/) Selenium test runner for
+[MediaWiki](http://www.mediawiki.org/) sites. Karaga subclasses the `TestCase`
+class from Python's [unittest](http://docs.python.org/library/unittest.html),
+adding assert methods based on common web testing patterns, such as checking
+for the presence of some element on the page, or checking that a cookie has
+been set.
 
 Setup
 -----
-_A [Sauce Labs](http://saucelabs.com) account is required._
+_Note: A [Sauce Labs](http://saucelabs.com) account is required._
 
 To install, run:
 
@@ -30,7 +35,7 @@ Understand
 
 Test cases inherit from `unittest.TestCase`. Each test case class should define
 a `platform` member, specifying platform to test again (currently only
-`firefox`) and optionally a `base_url` member, which will be prepended to
+firefox) and optionally a `base_url` member, which will be prepended to
 every URL requested in the tests.
 
 ```python

@@ -1,12 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-    Bangalore
-
-    The Wikimedia Foundation's E3 team's Selenium testing microframework
-
-    Author: Ori Livneh <ori@wikimedia.org>
-
-"""
 import ConfigParser
 import logging
 import os
