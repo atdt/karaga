@@ -1,10 +1,11 @@
 Karaga
 ======
 
-Karaga is the a Selenium test runner for MediaWiki sites.
+Karaga is a [Sauce Labs](http://saucelabs.com/) Selenium test runner for [MediaWiki](http://www.mediawiki.org/) sites. Karaga subclasses the `TestCase` class from Python's [unittest](http://docs.python.org/library/unittest.html), adding  assert methods based on common web testing patterns, such as checking for the presence of some element on the page, or checking that a cookie has been set.
 
 Setup
 -----
+_A [Sauce Labs](http://saucelabs.com) account is required._
 
 To install, run:
 
@@ -34,7 +35,6 @@ every URL requested in the tests.
 
 ```python
 class MyTestCase(karaga.MediaWikiTestCase):
-
     platform = 'firefox'
     base_url = 'http://wiki.karaga.org/w/'
 ```
