@@ -25,9 +25,8 @@ home directory:
 # example .karaga.cfg file
 
 [sauce]
-user = saucy_hacker                         # sauce labs username
-key = 73ac7051-e083-82f2-91bc-fe5273085a94  # sauce labs key
-timeout = 30                                # per-action timeout in seconds (default: 30)
+user = saucy_hacker
+key = 73ac7051-e083-82f2-91bc-fe5273085a94
 ```
 
 Understand
@@ -58,48 +57,40 @@ convenience, calling `self.get(url)` opens the page at `url`, prepended by
 In addition to unittest's set of assert methods, Karaga adds the following
 generic asserts:
 
-* `assertText(text, msg=None)`:
+```python
+assertText(text, msg=None)
+# Assert that text is present somewhere on the page
 
-  Assert that `text` is present somewhere on the page
+assertElementPresent(selector, msg=None)
+# Assert that one or more elements matching selector exists
 
-* `assertElementPresent(selector, msg=None)`
+assertDefined(varname)
+# Assert that a JavaScript global varname is defined
 
-  Assert that one or more elements matching `selector` exists
+assertExpression(expr)
+# Asserts that JavaScript expression expr evaluates to true
 
-* `assertDefined(varname)`
+assertCookie(name)
+# Asserts that a cookie named name is present
 
-  Assert that a JavaScript global `varname` is defined
+assertHtml(html)
+# Asserts that html is present in the page source
 
-* `assertExpression(expr)`
+assertQuerySelector(selector)
+# Asserts $(selector) returns a nonempty set
 
-  Asserts that JavaScript expression `expr` evaluates to true
-
-* `assertCookie(name)`
-
-  Asserts that a cookie named `name` is present
-
-* `assertHtml(html)`
-
-  Asserts that `html` is present in the page source
-
-* `assertQuerySelector(selector)`
-
-  Asserts $(`selector`) returns a nonempty set
-
-* `assertQuerySelectorEmpty(selector)`
-
-  Asserts $(`selector`) returns a nonempty set
-
+assertQuerySelectorEmpty(selector)
+# Asserts $(selector) returns a nonempty set
+```
 
 
 Karaga also adds the following MediaWiki-specific assert methods:
 
 
-* `assertModuleState(module, state)`
+```python
+assertModuleState(module, state)
+# Asserts that ResourceLoader module module has state state (e.g., ready, loaded, etc.)
 
-  Asserts that ResourceLoader module `module` has state `state` (e.g., `ready`,
-  `loaded`, etc.)
-
-* `assertNoModuleFailures(self)`
-
-  Asserts that no ResourceLoader module reports state `error`.
+assertNoModuleFailures(self)
+# Asserts that no ResourceLoader module reports state error.
+```
